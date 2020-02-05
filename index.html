@@ -2,27 +2,41 @@
 <html>
 <head>
 	<title>Javascript</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script type="text/javascript" src="main.js"></script>
 </head>
 <body>
-    <header>
-    <h1>Javascript Events</h1>
-</header>
-<main>
-    <ul id="checklist">
-        <li>
-            <span>Apples</span>
-            <input value="Apples" />
-        </li>
-        <li><span>Oranges</span>
-            <input value="Oranges" />
-        </li>
-        <li><span>Bananas</span>
-            <input value="Bananas" />
-        </li>
-    </ul>
-</main>
+	<h2>Display date and time</h2>
+	<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time.</button>
+	<p id="demo"></p>
+
+	<h2>Change HTML Content</h2>
+	<p id="nationality">Nationality: pakistani</p>
+	<button type="button" onclick='document.getElementById("nationality").innerHTML = "Nationality: PAKISTANI!"'>Change Nationality to capital letters.</button>
+	<button type="button" onclick='document.getElementById("nationality").style.fontSize = "25px"'>Increase Size</button>
+	<button type="button" onclick='document.getElementById("nationality").style.display = "none"'>Hide</button>
+
+	<h2>Turn light On/Off</h2>
+	<button type="button" onclick='document.getElementById("image").src="images/pic_bulbon.gif"'>Turn On the Light</button>
+	<img id="image" src="images/pic_bulboff.gif" style="width:100px">
+	<button type="button" onclick='document.getElementById("image").src="images/pic_bulboff.gif"'>Turn Off the Light</button>
+
+	<h2>Multiply numbers</h2>
+	<input type="text" name="First" id="num1"><br>
+<input type="text" name="Second" id="num2">
+<p id="multiply"></p>
+<button onclick="myFunction()">Multiply</button>
+
+
+<script>
+function myFunction() {
+  var number1 = document.getElementById("num1").value;
+  var number2 = document.getElementById("num2").value;
+  var answer = number1*number2;
+  return document.getElementById("multiply").innerHTML = answer;
+}
+
+</script>
+
+
+</body>
 </body>
 </html>
