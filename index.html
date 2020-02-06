@@ -2,41 +2,53 @@
 <html>
 <head>
 	<title>Javascript</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-	<h2>Display date and time</h2>
+	<h5>Display date and time</h5>
 	<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time.</button>
 	<p id="demo"></p>
 
-	<h2>Change HTML Content</h2>
+	<h5>Change HTML Content</h5>
 	<p id="nationality">Nationality: pakistani</p>
 	<button type="button" onclick='document.getElementById("nationality").innerHTML = "Nationality: PAKISTANI!"'>Change Nationality to capital letters.</button>
 	<button type="button" onclick='document.getElementById("nationality").style.fontSize = "25px"'>Increase Size</button>
 	<button type="button" onclick='document.getElementById("nationality").style.display = "none"'>Hide</button>
 
-	<h2>Turn light On/Off</h2>
+	<h5>Turn light On/Off</h5>
 	<button type="button" onclick='document.getElementById("image").src="images/pic_bulbon.gif"'>Turn On the Light</button>
 	<img id="image" src="images/pic_bulboff.gif" style="width:100px">
 	<button type="button" onclick='document.getElementById("image").src="images/pic_bulboff.gif"'>Turn Off the Light</button>
 
-	<h2>Multiply numbers</h2>
-	<input type="text" name="First" id="num1"><br>
-<input type="text" name="Second" id="num2">
-<p id="multiply"></p>
-<button onclick="myFunction()">Multiply</button>
+	<h5>Multiply numbers</h5>
+	Enter First Number: <input type="text" name="First" id="num1"> Enter Second Number: <input type="text" name="Second" id="num2">
+	<p id="multiply"></p>
+	<button onclick="myFunction()">Multiply</button>
 
+	<script>
+	function myFunction() {
+	var number1 = document.getElementById("num1").value;
+	var number2 = document.getElementById("num2").value;
+	var answer = number1*number2;
+	return document.getElementById("multiply").innerHTML = "Answer = "+answer;
+	}
+	</script>
+
+	<h5>Validity Check</h5>
+	<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
+
+<p id="fuck"></p>
 
 <script>
 function myFunction() {
-  var number1 = document.getElementById("num1").value;
-  var number2 = document.getElementById("num2").value;
-  var answer = number1*number2;
-  return document.getElementById("multiply").innerHTML = answer;
-}
-
+  var inpObj = document.getElementById("id1");
+  if (!inpObj.checkValidity()) {
+    document.getElementById("fuck").innerHTML = inpObj.validationMessage;
+  } else {
+    document.getElementById("fuck").innerHTML = "Your Lucky Number is " + inpObj.value;
+  } 
+} 
 </script>
-
-
-</body>
 </body>
 </html>
